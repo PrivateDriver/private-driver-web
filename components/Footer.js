@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer className={styles.footer}>
-        <img src="/privatedriver-icon.png" alt="PrivateDriver Logo" className={styles.logo} />
+        <img src="/privatedriver-icon.png" alt="" className={styles.logo} />
       </footer>
     </>
   )
