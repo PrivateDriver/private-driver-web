@@ -18,8 +18,13 @@
     enable = false
 
   # Test the production server before publish. A failure fails the build.
+  # Bind port 3000 explicitly: next start otherwise follows $PORT, and the
+  # first preview never answered on 3000 (plugin_state failed_build).
+  # Use Cypress's Electron browser. The plugin default is Chromium from
+  # Puppeteer 18, which is what the current production plugin error runs.
   [plugins.inputs.postBuild]
     enable = true
-    start = "npm run start"
+    browser = "electron"
+    start = "./node_modules/.bin/next start --port 3000"
     wait-on = "http://localhost:3000"
     wait-on-timeout = "120"
