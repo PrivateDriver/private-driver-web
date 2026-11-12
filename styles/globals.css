@@ -19,12 +19,6 @@ main {
   align-items: center;
 }
 
-code {
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Oxygen;
-}
-
 .container {
   background: #000000;
   color: #ffffff;

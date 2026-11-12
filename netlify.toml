@@ -2,5 +2,6 @@
   command = "npm run build"
   publish = ".next"
 
-[[plugins]]
-  package = "netlify-plugin-cypress"
+[build.environment]
+  # Cypress 16 requires Node 22. Pin it so Netlify does not fall back to an older default.
+  NODE_VERSION = "22"
