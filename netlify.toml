@@ -5,6 +5,21 @@
 [build.environment]
   # Cypress 16 requires Node 22. Pin it so Netlify does not fall back to an older default.
   NODE_VERSION = "22"
+  # Keep the Cypress binary inside node_modules so Netlify's dependency cache can reuse it.
+  CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+  TERM = "xterm"
 
 [[plugins]]
   package = "netlify-plugin-cypress"
+
+  # onSuccess runs after publish. A failure there cannot stop the deploy and
+  # surfaces as "Published With Plugin Error" (what the last production deploy did).
+  [plugins.inputs]
+    enable = false
+
+  # Test the production server before publish. A failure fails the build.
+  [plugins.inputs.postBuild]
+    enable = true
+    start = "npm run start"
+    wait-on = "http://localhost:3000"
+    wait-on-timeout = "120"

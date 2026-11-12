@@ -1,14 +1,15 @@
-describe('sample test', () => {
+describe('home page', () => {
   beforeEach(() => {
     cy.visit('/')
   })
 
-  it('displays the resources text', () => {
+  it('displays the headline', () => {
     cy.get('h1')
-    .contains('Welcome to my app!');
+    .contains('A Driver Driven App!');
   })
-  it('renders the Netlify logo image', () => {
-    cy.get('img')
+
+  it('loads the logo image', () => {
+    cy.get('img.main-logo')
     .should('be.visible')
     .and(($img) => {
       expect($img[0].naturalWidth).to.be.greaterThan(0);
