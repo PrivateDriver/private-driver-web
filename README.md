@@ -30,7 +30,7 @@ npm start
 npm test
 ```
 
-`npm test` builds the site, serves that production build, and runs Cypress headless against it.
+`npm test` builds the site, serves that production build, and runs Cypress headless against it. Cypress does not run during the Netlify build.
 
 ## Deploy
 
