@@ -5,7 +5,7 @@ describe('home page', () => {
 
   it('displays the headline', () => {
     cy.get('h1')
-    .contains('A Driver Driven App!');
+    .contains('A Driver Driven App');
   })
 
   it('loads the logo image', () => {

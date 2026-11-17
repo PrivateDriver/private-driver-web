@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import Footer from '@components/Footer'
-import { Roboto } from 'next/font/google';
+import { Roboto } from 'next/font/google'
 
-const roboto = Roboto({ subsets: ['latin-ext'], weight: ['100']})
+const roboto = Roboto({ subsets: ['latin-ext'], weight: ['400', '500'] })
 
-const title = 'PrivateDriver | Private membership for limousine owners'
-const description = 'PrivateDriver is a private membership platform where owners of private limousines book vetted chauffeurs. Trips are pre-arranged only. It is not a public rideshare.'
+const title = 'PrivateDriver | A Driver Driven App'
+const description = 'PrivateDriver. A Driver Driven App. Coming soon.'
 const url = 'https://privatedriver.io/'
 const image = 'https://privatedriver.io/privatedriver-logo.png'
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={`container ${roboto.className}`}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -29,8 +29,21 @@ export default function Home() {
       </Head>
 
       <main>
-        <img className='main-logo' src="/privatedriver-logo.png" alt="PrivateDriver Logo"  />
-        <h1 className={roboto.className}>A Driver Driven App!</h1>
+        <img
+          className="main-logo"
+          src="/privatedriver-logo.png"
+          alt="privatedriver.io"
+        />
+        <h1 className="tagline">A Driver Driven App</h1>
+        <p className="note">Coming soon</p>
+        <div className="stores">
+          <button type="button" className="store" disabled aria-disabled="true">
+            App Store
+          </button>
+          <button type="button" className="store" disabled aria-disabled="true">
+            Google Play
+          </button>
+        </div>
       </main>
 
       <Footer />
