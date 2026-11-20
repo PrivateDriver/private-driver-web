@@ -1,6 +1,6 @@
 # PrivateDriver.io
 
-Marketing site for [PrivateDriver](https://privatedriver.io/), a private membership platform where owners of private limousines book vetted chauffeurs. Trips are pre-arranged only. PrivateDriver is not a public rideshare.
+Marketing site for [PrivateDriver](https://privatedriver.io/). A Driver Driven App. Coming soon.
 
 The site is a Next.js 14 app (Pages Router, React 18) deployed on Netlify.
 
